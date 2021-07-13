@@ -271,6 +271,6 @@ background-color: #d6d4ce;
 		</div>
 </div>
 <!-- End of Old book -->
-<%@include file="all_component/footer.jsp" %>
+	<%@include file="all_component/footer.jsp"%>
 </body>
 </html>
