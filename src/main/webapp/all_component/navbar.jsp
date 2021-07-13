@@ -49,7 +49,7 @@ style="height:10px; background-color: #01579b">
         	Book</a></li>
     </ul>
     <form class="form-inline my-2 my-lg-0 ">
-      <button class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fas fa-cog"></i> Setting</button>
+      <a href="setting.jsp" class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fas fa-cog"></i> Setting</a>
       <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fas fa-phone-square-alt"></i> Contact Us</button>
     </form>
   </div>
