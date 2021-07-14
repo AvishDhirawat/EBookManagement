@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -271,6 +274,6 @@ background-color: #d6d4ce;
 		</div>
 </div>
 <!-- End of Old book -->
-	<%@include file="all_component/footer.jsp"%>
+<%@include file="all_component/footer.jsp" %>
 </body>
 </html>

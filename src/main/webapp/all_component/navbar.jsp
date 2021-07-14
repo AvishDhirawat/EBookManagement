@@ -38,7 +38,7 @@ style="height:10px; background-color: #01579b">
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active"> <a class="nav-link" href="index.jsp">Home 
+      <li class="nav-item active"> <a class="nav-link" href="#">Home 
       <span class="sr-only">(current)</span>
       </a></li>
       <li class="nav-item active" ><a class="nav-link " href="#"><i class="fas fa-book-open"></i> Recent 
@@ -49,8 +49,8 @@ style="height:10px; background-color: #01579b">
         	Book</a></li>
     </ul>
     <form class="form-inline my-2 my-lg-0 ">
-      <a href="setting.jsp" class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fas fa-cog"></i> Setting</a>
-      <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fas fa-phone-square-alt"></i> Contact Us</button>
+    <a href="setting.jsp" class="btn btn-light my-2 my-sm-0 " type="submit"><i class="fas fa-cog"></i> Setting</a>
+        <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fas fa-phone-square-alt"></i> Contact Us</button>
     </form>
   </div>
 </nav>
