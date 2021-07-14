@@ -18,8 +18,8 @@
 		</div>
 
 		<div class="col-md-3">
-			<a href="login.jsp" class="btn btn-success"><i
-				class="fas fa-sign-in-alt"></i>&nbsp Login</a> <a href="register.jsp"
+			<a href="../login.jsp" class="btn btn-success"><i
+				class="fas fa-sign-in-alt"></i>&nbsp Login</a> <a href="../register.jsp"
 				class="btn btn-primary text-white"> <i class="fas fa-user-plus"></i>&nbsp
 				Register
 			</a>
@@ -30,7 +30,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-	<a class="navbar-brand" href="#"><i class="fas fa-home"></i> </a>
+	<a class="navbar-brand" href="../index.jsp"><i class="fas fa-home"></i> </a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
