@@ -1,5 +1,6 @@
 package com.admin.servlet;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -36,11 +37,25 @@ public class BooksAdd extends HttpServlet{
 			
 			BookDAOImpl dao = new BookDAOImpl(DBConnect.getConn());
 			
+			
+			
+			
+			
+			
 			boolean f = dao.addBooks(b);
 			
 			HttpSession session = req.getSession();
 			
 			if(f) {
+				
+				String path = getServletContext().getRealPath("")+"book";
+				
+				File file = new File(path);
+				part.write(path+File.separator+fileName);
+				
+				
+				
+				
 				session.setAttribute("succMsg", "Book Added Successfully");
 				resp.sendRedirect("admin/add_books.jsp");
 						
