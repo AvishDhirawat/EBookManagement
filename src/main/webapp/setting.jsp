@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +22,7 @@ a:hover {
 <body style="background-color: #f7f7f7;">
 	<%@include file="all_component/navbar.jsp"%>
 	<div class="container">
-		<h3 class="text-center">Hello, Alpha</h3>
+		<h3 class="text-center">Hello, ${userobj.name }</h3>
 		<div class="row p-5">
 			<div class="col-md-6">
 				<a href="sell_book.jsp">
@@ -74,7 +76,7 @@ a:hover {
 					</div>
 				</a>
 			</div>
-			
+
 			<div class="col-md-4 mt-3">
 				<a href="helpline.jsp">
 					<div class="card">
@@ -88,12 +90,12 @@ a:hover {
 					</div>
 				</a>
 			</div>
-			
+
 
 		</div>
 	</div>
-	
-	<%@include file="all_component/footer.jsp" %>
-	
+
+	<%@include file="all_component/footer.jsp"%>
+
 </body>
 </html>

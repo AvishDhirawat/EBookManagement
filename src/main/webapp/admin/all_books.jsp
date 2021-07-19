@@ -18,6 +18,11 @@
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
+	
+	<c:if test="${empty userobj }">
+      <c:redirect  url="../login.jsp"/>
+   </c:if>
+	
 	<h3 class="text-center">Hello Admin</h3>
 	<c:if test="${not empty succMsg }">
 							<h5 class="text-center text-success">${succMsg }</h5>

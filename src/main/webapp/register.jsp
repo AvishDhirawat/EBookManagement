@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,34 +17,44 @@
 				<div class="card">
 					<div class="card-body">
 					<h4 class="text-center">Registration Page</h4>
-						<form>
+					<c:if test="${not empty succmsg}">
+						<p class="text-centre text-success">${succmsg}</p>
+						<c:remove var="succmsg" scope="session" />
+					</c:if>
+					
+					<c:if test="${not empty failedmsg}">
+						<p class="text-centre text-danger">${failedmsg}</p>
+						<c:remove var="failedmsg" scope="session" />
+					</c:if>
+						<form action="register" method="post">
+						
 
 							<div class="form-group">
 								<label for="name">Enter Full Name</label> <input
 									type="text" class="form-control" id="name"
-									aria-describedby="nameHelp" required="required">
+									aria-describedby="nameHelp" required="required" name="fname">
 
 							</div>
 							<div class="form-group">
 								<label for="email">Email address</label> <input
 									type="email" class="form-control" id="email"
-									aria-describedby="emailHelp" required="required">
+									aria-describedby="emailHelp" required="required" name="email">
 
 							</div>
 					
 					<div class="form-group">
 						<label for="phoneNo">Phone No</label> <input
 							type="number" class="form-control" id="phoneNo"
-							aria-describedby="phoneNoHelp" required="required">
+							aria-describedby="phoneNoHelp" required="required" name="phno">
 
 					</div>
 					<div class="form-group">
 						<label for="password">Password</label> <input
-							type="password" class="form-control" id="password">
+							type="password" class="form-control" id="password" name="password">
 					</div>
 					<div class="form-check">
-						<input type="checkbox" class="form-check-input" id="Check1">
-						<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						<input type="checkbox" class="form-check-input" id="Check1" name="check">
+						<label class="form-check-label" for="exampleCheck1">Agree terms and conditions</label>
 						
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>

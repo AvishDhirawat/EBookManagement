@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +28,10 @@ a:hover {
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
+
+   <c:if test="${empty userobj }">
+      <c:redirect  url="../login.jsp"/>
+   </c:if>
 
 	<div class="container">
 		<div class="row p-5">
@@ -67,6 +73,7 @@ a:hover {
 			</div>
 
 			<div class="col-md-3">
+				<a data-toggle="modal" data-target="#myModal">
 				<div class="card">
 					<div class="card-body text-center">
 						<i class="fas fa-sign-out-alt fa-3x text-primary"></i><br>
@@ -74,6 +81,7 @@ a:hover {
 						-----------
 					</div>
 				</div>
+				</a>
 			</div>
 
 
@@ -81,6 +89,44 @@ a:hover {
 		</div>
 
 	</div>
+	
+	<!-- logout modal -->
+
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+           <div class="text-center">
+              <h4>Do You want to logout</h4>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <a href="../logout" type="button" class="btn btn-primary text-white" >Logout</a>
+       
+           
+           </div>
+         
+          </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<!-- end logout modal -->
+	
+	
 	<div style="margin-top: 130px">
 		<%@ include file="footer.jsp"%>
 	</div>
