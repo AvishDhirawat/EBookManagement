@@ -10,6 +10,7 @@ import com.entity.BookDtls;
 
 public class BookDAOImpl implements BookDAO{
 
+
 	private Connection conn;
 	
 	
@@ -173,6 +174,126 @@ public class BookDAOImpl implements BookDAO{
 	
 	}
 	
+	public List<BookDtls> getNewBook() {
+		// TODO Auto-generated method stub
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null;
+		
+		try {
+			String sql = "SELECT * FROM book_dtls WHERE bookCategory=? AND status=? ORDER BY bookId DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, "New");
+			ps.setString(2, "Active");
+			
+			ResultSet rs = ps.executeQuery();
+			int i=1;
+			
+			while(rs.next() && i<=4)
+			{
+				b=new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getString(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+				i++;
+				
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace(); 
+		}
+		
+		return list;
+	}
+
+
+
+
+
+	public List<BookDtls> getRecentBooks() {
+		// TODO Auto-generated method stub
+		
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null;
+		
+		try {
+			String sql = "SELECT * FROM book_dtls WHERE status=? ORDER BY bookId DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, "Active");
+			
+			ResultSet rs = ps.executeQuery();
+			int i=1;
+			
+			while(rs.next() && i<=4)
+			{
+				b=new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getString(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+				i++;
+				
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace(); 
+		}
+		
+		return list;
+		}
+
+
+	public List<BookDtls> getOldBooks() {
+		// TODO Auto-generated method stub
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null;
+		
+		try {
+			String sql = "SELECT * FROM book_dtls WHERE bookCategory=? AND status=? ORDER BY bookId DESC";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, "Old");
+			ps.setString(2, "Active");
+			
+			ResultSet rs = ps.executeQuery();
+			int i=1;
+			
+			while(rs.next() && i<=4)
+			{
+				b=new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setAuthor(rs.getString(3));
+				b.setPrice(rs.getString(4));
+				b.setBookCategory(rs.getString(5));
+				b.setStatus(rs.getString(6));
+				b.setPhotoName(rs.getString(7));
+				b.setEmail(rs.getString(8));
+				list.add(b);
+				i++;
+				
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace(); 
+		}
+		
+		return list;
+	}
+
+
 	
 
 }
