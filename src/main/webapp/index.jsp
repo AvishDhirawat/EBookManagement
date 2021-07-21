@@ -101,7 +101,8 @@
 		</div>
 
 		<div class="text-center mt-1">
-			<a href="" class="btn btn-danger btn-sm text-white">View All</a>
+			<a href="all_recent_book.jsp"
+				class="btn btn-danger btn-sm text-white">View All</a>
 		</div>
 	</div>
 	<!-- End of recent book -->
@@ -149,7 +150,8 @@
 		</div>
 
 		<div class="text-center mt-1">
-			<a href="" class="btn btn-danger btn-sm text-white">View All</a>
+			<a href="all_new_book.jsp" class="btn btn-danger btn-sm text-white">View
+				All</a>
 		</div>
 	</div>
 	<!-- End of New book -->
@@ -160,44 +162,45 @@
 	<div class="container">
 		<h3 class="text-center">Old Book</h3>
 		<div class="row">
-			
-				<%
-				BookDAOImpl dao3 = new BookDAOImpl(DBConnect.getConn());
-				List<BookDtls> list3 = dao3.getOldBooks();
 
-				for (BookDtls b : list3) {
-				%>
-				<div class="col-md-3">
-					<div class="card crd-ho">
-						<div class="card-body text-center">
-							<img alt="" src="book/<%=b.getPhotoName()%> "
-								style="width: 150px; height: 200px" class="img-thumblin">
-							<p><%=b.getBookName()%></p>
-							<p><%=b.getAuthor()%></p>
+			<%
+			BookDAOImpl dao3 = new BookDAOImpl(DBConnect.getConn());
+			List<BookDtls> list3 = dao3.getOldBooks();
 
-							<p>
-								Category:<%=b.getBookCategory()%></p>
-							<div class="row">
-								<a href="" class="btn btn-success btn-sm ml-5">View Details</a> <a
-									href="" class="btn btn-danger btn-sm ml-1"><i
-									class="fas fa-rupee-sign"></i><%=b.getPrice()%></a>
-							</div>
+			for (BookDtls b : list3) {
+			%>
+			<div class="col-md-3">
+				<div class="card crd-ho">
+					<div class="card-body text-center">
+						<img alt="" src="book/<%=b.getPhotoName()%> "
+							style="width: 150px; height: 200px" class="img-thumblin">
+						<p><%=b.getBookName()%></p>
+						<p><%=b.getAuthor()%></p>
 
+						<p>
+							Category:<%=b.getBookCategory()%></p>
+						<div class="row">
+							<a href="" class="btn btn-success btn-sm ml-5">View Details</a> <a
+								href="" class="btn btn-danger btn-sm ml-1"><i
+								class="fas fa-rupee-sign"></i><%=b.getPrice()%></a>
 						</div>
+
 					</div>
 				</div>
-
-				<%
-				}
-				%>
 			</div>
 
-
+			<%
+			}
+			%>
 		</div>
 
-		<div class="text-center mt-1">
-			<a href="" class="btn btn-danger btn-sm text-white">View All</a>
-		</div>
+
+	</div>
+
+	<div class="text-center mt-1">
+		<a href="all_old_book.jsp" class="btn btn-danger btn-sm text-white">View
+			All</a>
+	</div>
 	</div>
 	<!-- End of Old book -->
 	<%@include file="all_component/footer.jsp"%>

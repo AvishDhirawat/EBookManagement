@@ -45,7 +45,7 @@
 							</div>
 
 							<div class="text-center">
-							<!-- <a href="admin/home.jsp">Admin</a> -->
+							<!-- 	<a href="admin/home.jsp">Admin</a>  -->
 								<button type="submit" class="btn btn-primary">Login</button>
 								<br> <a href="register.jsp">Create Account</a>
 							</div>
