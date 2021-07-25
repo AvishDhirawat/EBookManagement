@@ -53,7 +53,7 @@ public class BooksAdd extends HttpServlet{
 				File file = new File(path);
 				part.write(path+File.separator+fileName);
 				
-				
+				System.out.println(path);
 				
 				
 				session.setAttribute("succMsg", "Book Added Successfully");

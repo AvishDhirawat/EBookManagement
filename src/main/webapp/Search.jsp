@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>All Recent Book </title>
+<title>Search </title>
 <%@include file="all_component/allCSS.jsp" %>
 <style type="text/css">
 
@@ -27,8 +27,9 @@ User u=(User)session.getAttribute("userobj");
 	<div class="container-fluid">
 		<div class ="row p-3">
 			<%
+			String ch = request.getParameter("ch");
 			BookDAOImpl dao2 = new BookDAOImpl(DBConnect.getConn());
-			List<BookDtls> list = dao2.getAllRecentBook();
+			List<BookDtls> list = dao2.getBookBySearch(ch);
 
 			for (BookDtls b : list) {
 			%>
@@ -47,7 +48,7 @@ User u=(User)session.getAttribute("userobj");
 							Category:<%=b.getBookCategory()%></p>
 						<div class="row">
 
-							<a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ml-5">View Details</a> <a
+							<a href="" class="btn btn-success btn-sm ml-5">View Details</a> <a
 								href="" class="btn btn-danger btn-sm ml-1"><i
 								class="fas fa-rupee-sign"></i><%=b.getPrice()%></a>
 						</div>
@@ -57,6 +58,7 @@ User u=(User)session.getAttribute("userobj");
 						<p>
 							Category:<%=b.getBookCategory()%></p>
 						<div class="row">
+							
 							<%
 							if(u==null){
 							%>
@@ -64,7 +66,7 @@ User u=(User)session.getAttribute("userobj");
 							<%
 							} else {
 							%>
-							<a href="cart?bid=<%=b.getBookId() %>&&uid=<%=u.getId() %>" class="btn btn-danger btn-sm ml-1"><i
+							<a href="checkout.jsp?bid=<%=b.getBookId() %>&&uid=<%=u.getId() %>" class="btn btn-danger btn-sm ml-1"><i
 								class="fas fa-cart-plus"></i> Add Cart</a>
 							<%
 							}

@@ -4,4 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>AddOldBook</servlet-name>
+  	<display-name>AddOldBook</display-name>
+  	<description></description>
+  	<servlet-class>com.user.servlet.AddOldBook</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteOldBook</servlet-name>
+  	<display-name>DeleteOldBook</display-name>
+  	<description></description>
+  	<servlet-class>com.user.servlet.DeleteOldBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddOldBook</servlet-name>
+  	<url-pattern>/AddOldBook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteOldBook</servlet-name>
+  	<url-pattern>/DeleteOldBook</url-pattern>
+  </servlet-mapping>
 </web-app>

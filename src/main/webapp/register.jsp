@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Ebook: Register</title>
+<title>Pick-a-Book: Register</title>
 <%@include file="all_component/allCSS.jsp"%>
 </head>
 <body style="background-color: #f0f1f2;">

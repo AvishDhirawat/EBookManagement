@@ -36,6 +36,8 @@ public class RegisterServlet extends HttpServlet {
 			if (check != null) {
 				UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
 				boolean f = dao.userRegister(us);
+			boolean f2 = dao.checkUser(email);
+			if(f2) {
 				if (f) {
 					session.setAttribute("succmsg", "User Register Success...");
 					resp.sendRedirect("register.jsp");
@@ -43,6 +45,11 @@ public class RegisterServlet extends HttpServlet {
 					session.setAttribute("failedmsg", "Something went wrong...");
 					resp.sendRedirect("register.jsp");
 				}
+			}
+			else {
+				session.setAttribute("failedmsg", "User  Already Exist..Try Another Email");
+				resp.sendRedirect("register.jsp");
+			}
 			} else {
 				session.setAttribute("failedmsg", "Please check agree terms and conditions");
 				resp.sendRedirect("register.jsp");

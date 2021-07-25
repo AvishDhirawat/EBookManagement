@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>All Recent Book </title>
+<title>All Old Book </title>
 <%@include file="all_component/allCSS.jsp" %>
 <style type="text/css">
 
@@ -35,13 +35,12 @@
 						<p><%=b.getBookName()%></p>
 						<p><%=b.getAuthor()%></p>
 						<p>
-							Category:<%=b.getBookCategory()%></p>
+							Categories:<%=b.getBookCategory()%></p>
 						<div class="row">
-							<a href="" class="btn btn-danger btn-sm ml-1"><i
-								class="fas fa-cart-plus"></i> Add Cart</a> <a href=""
-								class="btn btn-success btn-sm ml-1">View</a> <a href=""
-								class="btn btn-danger btn-sm ml-1"><i
-								class="fas fa-rupee-sign"></i><%=b.getPrice()%></a>
+							<a href="view_books.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ml-5">View Details</a> 
+							<a href=""
+								class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%>
+								<i class="fas fa-rupee-sign"></i></a>
 						</div>
 					</div>
 				</div>

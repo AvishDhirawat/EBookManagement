@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Helpline</title>
 <%@include file="all_component/allCSS.jsp"%>
 </head>
 <body style="background-color: #f0f1f2;">

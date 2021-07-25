@@ -1,13 +1,22 @@
+<%@page import="com.entity.Book_Order"%>
+<%@page import="com.DB.DBConnect"%>
+<%@page import="com.DAO.BookOrderImpl"%>
+<%@page import="com.entity.User"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Order</title>
 <%@include file="all_component/allCSS.jsp"%>
 </head>
 <body style="background-color: #f0f1f2;">
+<c:if test="${empty userobj }">
+<c:redirect url="login.jsp"></c:redirect>
+</c:if>
 	<%@include file="all_component/navbar.jsp"%>
 
 	<div class="container p-1">
@@ -24,15 +33,26 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
+			    <%
+			    User u = (User) session.getAttribute("userobj");
+			    BookOrderImpl dao = new BookOrderImpl(DBConnect.getConn());
+			    List<Book_Order> blist = dao.getBook(u.getEmail());
+			    for(Book_Order b: blist){
+			    %>	
+			    <tr>
+					<th scope="row"><%= b.getOrderId() %></th>
+					<td><%= b.getUsername() %></td>
+					<td><%= b.getBookName() %></td>
+					<td><%= b.getAuthor() %></td>
+					<td><%= b.getPrice() %></td>
+					<td><%= b.getPaymentType() %></td>
 				</tr>
-
+			    <%
+			    }
+			    %>
+			    
+			   
+			
 			</tbody>
 		</table>
 	</div>
